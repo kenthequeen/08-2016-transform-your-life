@@ -38,7 +38,7 @@ var transform = function(collection, callback){
 		})
 		return newSentence.join(" ");
 	}
-	console.log(bestSentenceToUpperCase("This is the best course."));
+	//console.log(bestSentenceToUpperCase("This is the best course."));
 	//transform(bestSentence, function(word){
 	//return bestSentence.toUpperCase();
 //});
@@ -48,9 +48,7 @@ var transform = function(collection, callback){
 var person = {name: 'Jon', greatestFear: 'fearItself'};
 var collectedContents = [];
 var collectedCharacteristics = transform(person, function(quality){
-for (key in person){
-	collectedContents.push(person);
-}
+	return collectedContents.push(person);
 });
 //console.log(collectedContents);
 //^^should this print more than once?
@@ -65,6 +63,7 @@ var multByThree = function(collection){
 //console.log(multByThree(numbers));
 // 6. upperCase
 
+
 var upperCase = function(string){
 		newString = string.split(" ");
 	newSentence2 = transform(newString, function(word){
@@ -72,27 +71,50 @@ var upperCase = function(string){
 
 	});
 	return newSentence2.join(" ");
-}
-//console.log(upperCase("Hey what's up?"));
+};
+var bestSentence = "This is the best six week course ever!";
+console.log(upperCase(bestSentence));
+
 
 // 7. contentsCollection
-var contentsCollection = function(object){
-	var newContent =[];
-	var interiorObject = transform(object, function(quality){
-	for(key in object){
-		newContent.push(contentsCollection);
-	};
-  });
-
+ var contentsCollection = function(collection){
+	var newArray =[];
+	return transform(collection, function(quality){
+		return person.push(newArray);
+	});
+	console.log(newArray);
 };
-console.log(contentsCollection(person));
+	
+var person = {name: 'Jon', greatestFear: 'fearItself'};
+
+//console.log(collectedContents); // ['name', 'Jon', 'greatestFear', 'fear itself'];
+
 //^^ this console log returning undefined. Fix this. 
 
 // 8. multByWhatever
+var multByWhatever = function(collection, inputNum) {
+	return transform(collection, function(number){
+		return number * inputNum;
+	});
+};
+
+numbers = [1,2,3,4,5];
+//console.log(multByWhatever(numbers, 2));
 
 // 9. divideByWhatever
 
+var divideByWhatever = function(collection, inputNum){
+	return transform(collection, function(number){
+		return number/ inputNum;
+	});
+};
+numbers = [35, 76, 89, 23, 10];
+//console.log(divideByWhatever(numbers, 5));
+
 // 10. switchCase
+var switchCase = function(sentence, case){
+	
+}
 
 // 11. contentsCollector
 
